@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Proof</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    #proof-container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="proof-container">
+    <h2>Proof Image</h2>
+    <img id="proof-image" src="" alt="Proof Image" style="max-width: 100%; height: auto;">
+    <p id="error-message" style="color: red; display: none;">Error: The proof file could not be loaded. Please check the link.</p>
+  </div>
+
+  <script>
+    // Get the proofFile from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const proofFile = urlParams.get('proofFile');
+
+    if (proofFile) {
+      // Validate if it's a proper image file extension (optional check)
+      const validExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+      const fileExtension = proofFile.split('.').pop().toLowerCase();
+
+      if (validExtensions.includes(fileExtension)) {
+        // Display the proof image by setting the source
+        document.getElementById('proof-image').src = proofFile;
+      } else {
+        // Show error if file is not a valid image
+        document.getElementById('error-message').style.display = 'block';
+        document.getElementById('proof-container').innerHTML += '<p>Invalid image format. Please check the file link.</p>';
+      }
+    } else {
+      // If no proofFile is found, show an error message
+      document.getElementById('error-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

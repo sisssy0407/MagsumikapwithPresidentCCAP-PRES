@@ -1,0 +1,264 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collective Action Digital Point System</title>
+    <link rel="stylesheet" href="huh.css">
+   
+</head>
+<body>
+  
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+    <a href="#" id="logout-btn">Logout</a>
+  </div>
+  
+  <div id="user" class="user">
+    <img id="user-avatar" src="" alt="Avatar" style="width: 50px; border-radius: 100%; height: 50px;">
+    <span id="user-name"></span>
+  </div>
+
+  <h1>
+    <div class="container">
+      <div class="image-div1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9vC7UYXRR60aVJ3ha9-A6tPVIylSYhxzQfg&s" alt="" style="width:150px;">
+      </div>
+      <div class="DPS">Classroom Collective Action Point-Performance and Reward System</div>
+    </div>
+  </h1>
+
+  <section id="student-dashboard">
+    <h2>Student Dashboard</h2>
+    <p>Points: <span id="points-display">0</span></p>
+    <button id="submit-proof-btn">Submit Proof</button>
+    <button id="view-transactions-btn">View Transactions</button>
+  </section>
+
+  <section id="task">
+    <h2>SPECIFIC TASKS:</h2>
+    <form action="/action_page.php">
+      <input type="checkbox" id="Donate7" name="Donate" value="7th" data-points="100">
+      <label for="Donate"> Honesto = 100 pts</label><br><br>
+
+      <input type="checkbox" id="Donate1" name="Donate" value="1st" data-points="100">
+      <label for="Donate"> Report Bullying = 100 pts </label><br><br>
+
+      <input type="checkbox" id="Donate4" name="Donate" value="4th" data-points="100">
+      <label for="Donate"> Repair of School Materials = 100 pts</label><br><br>
+
+      <input type="checkbox" id="Donate5" name="Donate" value="5th" data-points="100">
+      <label for="Donate"> Flag Raising Attendance (100%) = 100 pts</label><br><br>
+
+      <input type="checkbox" id="Donate6" name="Donate" value="6th" data-points="100">
+      <label for="Donate"> Regularly Cleaning Classroom (Weekly Basis) = 100 pts</label><br><br>
+      
+      <input type="checkbox" id="Donate7" name="Donate" value="8th" data-points="100">
+      <label for="Donate"> Regularly Cleaning Bathroom (Weekly Basis) = 100 pts</label><br><br>
+
+      <input type="checkbox" id="Donate7" name="Donate" value="9th" data-points="100">
+      <label for="Donate"> School Clean up Drive = 100 pts</label><br><br>
+
+      <input type="checkbox" id="Donate7" name="Donate" value="10th" data-points="75">
+      <label for="Donate"> Segregation of Trash = 75 pts</label><br><br>
+      
+      <input type="checkbox" id="Donate7" name="Donate" value="11th" data-points="75">
+      <label for="Donate"> Extra Curricular Activity Participation = 75 pts</label><br><br>
+      
+      <input type="checkbox" id="Donate2" name="Donate" value="2nd" data-points="75">
+      <label for="Donate"> Donation (any amount) = 75 pts </label><br><br>
+      
+      <input type="checkbox" id="Donate3" name="Donate" value="3rd" data-points="75">
+      <label for="Donate"> Parents Meeting Attendance(Majority) = 75 pts </label><br><br>
+    </form>
+  </section>
+
+  <section id="proof-submission">
+    <h2>Submit Proof</h2>
+    <form id="proof-form">
+    
+      <div><input type="file" id="proof-file" accept=".pdf, .jpg, .png"></div>
+      
+      <div><textarea id="proof-description" placeholder="Grade and Section"></textarea></div>
+      
+       <div><label for="teacher-select">Select Teacher:</label>
+      <select id="teacher-select" name="teacher">
+
+		<option value="priticlaycrafts1@gmail.com">PRINCESS(PRITI CLAYCRAFTS)</option>
+        
+        <option value="jaelene.orencia@deped.gov.ph">Jaelene Orencia(11-HUMMS C)</option>
+        
+        <option value="lujim.bulan@deped.gov.ph">Lujim Bulan(11-EIM)</option>
+        
+        <option value="demmieanne.bergante@deped.gov.ph">Demmi Anne Bergante((12-COMBO 2A)</option>
+        
+        <option value="joseph.mondonedo@deped.gov.ph">Joseph Mondonedo(12-HUMMS A)</option>
+        
+        <option value="sherilyn.lucero@deped.gov.ph">Sherilyn Lucero(11-COMBO 2A)</option>
+        
+        <option value="grace.muli@deped.gov.ph"> Grace Muli(12-ABM)</option>
+        
+        <option value="sharon.pura@deped.gov.ph">Sharon Pura(12-ICT A)</option>
+
+        <option value="jaypee.fajardo@deped.gov.ph">Jaypee Fajardo(12-ICT B)</option>
+
+        <option value="kyla.sombillo@deped.gov.ph"> Kyla Sombillo(11-ICT A)</option>
+
+        <option value="eric.escobar@deped.gov.ph">Eric Escobar(11-HUMMS A)</option>
+
+        <option value="joyvelyn.ramil@deped.gov.ph">Joyvelyn Ramil(12-COMBO 2B)</option>
+
+        <option value="ariel.casupanan@deped.gov.ph">Ariel Casupanan(11-ICT B)</option>
+        </div>
+</select>
+
+
+      <div><button id="submit-proof-form-btn" type="button">Submit</button></div>
+    </form>
+  </section>
+  
+  
+  
+  
+<select id="reward-select" multiple>
+  <option value="">Select One reward for each Category</h2>
+
+  <!-- School Supplies -->
+  <optgroup label="School Supplies">
+    <option value="school-supplies" data-points="1000">Colored Paper (1 Rim)</option>
+    <option value="school-supplies" data-points="1000">Folder Long (5 pcs)</option>
+    <option value="school-supplies" data-points="1000">Folder Short (5 pcs)</option>
+    <option value="school-supplies" data-points="1000">Ballpens (10 pcs)</option>
+    <option value="school-supplies" data-points="1000">Pencil & Eraser (10 pcs)</option>
+    <option value="school-supplies" data-points="1000">Yellow Pad (1 Whole)</option>
+    <option value="school-supplies" data-points="1000">Chalk & Eraser</option>
+    <option value="school-supplies" data-points="1000">Marker</option>
+    <option value="school-supplies" data-points="1000">Ruler</option>
+    <option value="school-supplies" data-points="1000">Bond Paper (1 Rim)</option>
+  </optgroup>
+
+  <!-- Cleaning Materials -->
+  <optgroup label="Cleaning Materials">
+    <option value="cleaning-materials" data-points="1000">1 Pack of Garbage Bags</option>
+    <option value="cleaning-materials" data-points="1000">Floor Mop</option>
+    <option value="cleaning-materials" data-points="1000">Broom</option>
+    <option value="cleaning-materials" data-points="1000">Trash Can</option>
+    <option value="cleaning-materials" data-points="1000">Cleaning Towel</option>
+    <option value="cleaning-materials" data-points="1000">Dust Pan</option>
+  </optgroup>
+</select>
+
+<button id="redeem-points-btn" onclick="redirectToScanner()">Redeem Points</button>
+
+<script>
+  document.getElementById('reward-select').addEventListener('change', function() {
+    let selectedOptions = Array.from(this.selectedOptions);
+    let schoolSuppliesSelected = false;
+    let cleaningMaterialsSelected = false;
+
+    // Loop through the selected options
+    selectedOptions.forEach(option => {
+      if (option.parentElement.label === "Select One School Supplies") {
+        schoolSuppliesSelected = true;
+      } else if (option.parentElement.label === "Select One Cleaning Materials") {
+        cleaningMaterialsSelected = true;
+      }
+    });
+
+    // If exactly 2 items are selected (1 from each category), disable all options
+    if (selectedOptions.length === 2) {
+      // Disable all options
+      Array.from(this.options).forEach(option => {
+        option.disabled = true;
+      });
+    } else {
+      // Enable all options
+      Array.from(this.options).forEach(option => {
+        option.disabled = false;
+      });
+
+      // Disable options in the same category if one is already selected
+      Array.from(this.options).forEach(option => {
+        if ((schoolSuppliesSelected && option.parentElement.label === "Select One School Supplies") ||
+          (cleaningMaterialsSelected && option.parentElement.label === "Select One Cleaning Materials")) {
+          if (!option.selected) {
+            option.disabled = true;
+          }
+        }
+      });
+    }
+  });
+
+  function redirectToScanner() {
+    // Add your logic for redirecting to the QR scanner page
+    window.location.href = "your-qr-scanner-page.html";
+  }
+</script>
+
+
+
+
+  <section id="transactions" style="display:none;">
+    <h2>Transactions</h2>
+    <ul id="transactions-list">
+      <!-- New transactions will be appended here -->
+    </ul>
+  </section>
+
+  <script>
+    // Load user data from local storage
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user) {
+        document.getElementById('user-avatar').src = user.avatar;
+        document.getElementById('user-name').textContent = user.name;
+        document.getElementById('points-display').textContent = user.points || 0; // Initialize points display
+    } else {
+        // Redirect to signup if no user is found
+        window.location.href = 'index.html';
+    }
+
+    document.getElementById('logout-btn').addEventListener('click', function() {
+        localStorage.removeItem('user');
+        window.location.href = 'index.html';
+    });
+
+    function redeemPoints() {
+        const rewardSelect = document.getElementById('reward-select');
+        const selectedOption = rewardSelect.options[rewardSelect.selectedIndex];
+        const pointsCost = parseInt(selectedOption.getAttribute('data-points'), 10);
+
+        if (!selectedOption.value) {
+            alert('Please select a reward.');
+            return;
+        }
+
+        const currentPoints = parseInt(document.getElementById('points-display').textContent, 10);
+
+        if (currentPoints < pointsCost) {
+            alert('Insufficient points.');
+            return;
+        }
+
+        const updatedPoints = currentPoints - pointsCost;
+        document.getElementById('points-display').textContent = updatedPoints;
+
+        // Save updated points to local storage
+        if (user) {
+            user.points = updatedPoints;
+            localStorage.setItem('user', JSON.stringify(user));
+        }
+
+        // Here you can also add code to handle the reward redemption
+        alert('Reward redeemed successfully!');
+    }
+
+  </script>
+  
+<script src="huh.js"></script>
+</body>
+</html>

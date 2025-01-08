@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop-Up Box</title>
+  <style>
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #74ebd5, #acb6e5); /* Light Blue to Purple Gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Pop-Up Box Styling */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 500px;
+      transform: translateY(-50px);
+      animation: slideIn 0.5s forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .popup-content h2 {
+      margin: 0 0 15px;
+      color: #28a745;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .popup-content p {
+      margin: 0 0 20px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .popup-content button {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .popup-content button:hover {
+      background-color: #2980b9;
+    }
+
+    .popup-content button:active {
+      transform: scale(0.98);
+    }
+
+    /* Close button positioning */
+    #closeBtn {
+      background-color: #dc3545;
+      margin-top: 20px;
+    }
+
+    #closeBtn:hover {
+      background-color: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Pop-Up Box -->
+  <div id="popupBox" class="popup">
+    <div class="popup-content">
+      <h2>Congratulations, President!</h2>
+      <p>You have successfully redeemed your points. Keep up the great work!</p>
+      <p id="selectedItems"></p> <!-- Display selected items here -->
+      <p id="dateTime"></p> <!-- Display the date and time here -->
+      <button id="closeBtn">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const closeBtn = document.getElementById("closeBtn");
+      const dateTimeDisplay = document.getElementById("dateTime");
+
+      // Get the current date and time
+      const currentDate = new Date();
+      const formattedDate = currentDate.toLocaleString(); // Format it to a readable string
+
+      // Display the date and time
+      dateTimeDisplay.textContent = `Redeemed on: ${formattedDate}`;
+
+      // Redirect to "huh.html" when the Close button is clicked
+      closeBtn.addEventListener("click", () => {
+        window.location.href = "huh.html";
+      });
+    });
+  </script>
+</body>
+</html>
